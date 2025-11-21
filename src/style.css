@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;700;800&display=swap');
+
+
 :root {
     --color-gray-0:#f5f7f9;
-    --color-gray-50: #e30608;
+    --color-gray-50: #e3e6e8;
     --color-gray-100: #cbcfd2;
     --color-gray-200:#adb3b8;
     --color-gray-300: #9ba1d9;
@@ -23,4 +26,80 @@
     --radius-2: 0.8rem;
     --radius-3: 1.2rem;
 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    outline: 0;
+    background: transparent;
+}
+
+body{
+    font-family: sans-serif, "Montserrat";
+    max-width: 100vw;
+    background: var(--color-gray-50);
+    padding: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+a{
+    color: var(--color-gray-600);
+    transition: var(--transition);
+
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1,h2,h3,h4,h5{
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+h1{
+    font-size: 2.4rem;
+}
+h2{
+    font-size: 1.6rem;
+}
+h3{
+    font-size: 1.1rem
+}
+h4{
+    font-size: 1rem;
+}
+h5{
+    font-size: 0.8rem;
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+/*==================SIDEBAR==================*/
+
+.sidebar{
+    
 }
