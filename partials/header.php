@@ -125,9 +125,80 @@
             <canvas id="chart">
 
             </canvas>
+
+            <section class="topProducts">
+                <h3>Top Selling Products</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Stock</th>
+                            <th>Price</th>
+                            <th>Sales</th>
+                            <th>Earnings</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img src="./assets/product1.jpg" alt="">
+                                </div>
+                                <p>Winter Jacket for females</p>
+                            </td>
+                            <td>932</td>
+                            <td>$23.99</td>
+                            <td>1,838</td>
+                            <td>$802,00</td>
+                            <td>+11.5%</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img src="./assets/product1.jpg" alt="">
+                                </div>
+                                <p>Winter Jacket for females</p>
+                            </td>
+                            <td>932</td>
+                            <td>$23.99</td>
+                            <td>1,838</td>
+                            <td>$802,00</td>
+                            <td>+11.5%</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img src="./assets/product1.jpg" alt="">
+                                </div>
+                                <p>Winter Jacket for females</p>
+                            </td>
+                            <td>932</td>
+                            <td>$23.99</td>
+                            <td>1,838</td>
+                            <td>$802,00</td>
+                            <td>+11.5%</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img src="./assets/product1.jpg" alt="">
+                                </div>
+                                <p>Winter Jacket for females</p>
+                            </td>
+                            <td>932</td>
+                            <td>$23.99</td>
+                            <td>1,838</td>
+                            <td>$802,00</td>
+                            <td>+11.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <small>See more...</small>
+            </section>
         </section>
         <section class="main__right">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita tempora laboriosam eveniet dolore, ullam numquam blanditiis tempore amet ipsum repudiandae molestiae facere dolor. Culpa commodi nulla cupiditate quis esse sed praesentium, magnam ratione adipisci id fugiat beatae modi nihil inventore rerum illum maxime iusto omnis officiis ab officia dignissimos minus molestiae! Ipsum esse quidem voluptate, dolores assumenda saepe iusto voluptatem libero commodi tenetur debitis temporibus quia sint distinctio deleniti autem nemo quisquam blanditiis in placeat. Error consequatur nemo, rem exercitationem vel soluta consectetur ea dolor eos quibusdam? Impedit voluptates libero recusandae praesentium laudantium asperiores voluptas sint quia fugit ducimus?
+            
         </section>
     </section>
    
