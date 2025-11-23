@@ -401,3 +401,76 @@ table tbody tr div{
 .topProducts small:hover{
     background: var(--color-gray-50);
 }
+
+
+/*========================TOP CATEGORIES==========================*/
+
+.topCategories{
+    background: var(--color-gray-0);
+    max-width: 100%;
+    border-radius: var(--radius-2);
+    margin: 1.5rem 0 1rem;
+    padding: 1rem;
+}
+
+.topCategories header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topCategories header i{
+    font-size: 1rem;
+}
+
+#categories{
+    max-width: 100%;
+    margin-top: -2rem;
+}
+
+.topCategories ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0.6rem 0;
+}
+
+.topCategories ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topCategories ul li span{
+    width: 0.7rem;
+    aspect-ratio: 1/1;
+    background: #b1b1b1;
+    border-radius: 50%;
+    display: block;
+}
+
+.topCategories ul li:nth-child(2) span{
+    background: var(--color-purple);
+}
+.topCategories ul li:nth-child(3) span{
+    background: var(--color-success);
+}
+.topCategories ul li:nth-child(4) span{
+    background: var(--color-info);
+}
+
+.topCategories ul li div{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.topCategories button{
+    margin-top: 0.7rem;
+    padding: 0.7rem;
+    text-align: center;
+    width: 100%;
+    border-radius: var(--radius-1);
+    background: var(--color-gray-50);
+    color: var(--color-gray-900);
+}

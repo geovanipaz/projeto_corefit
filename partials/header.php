@@ -198,7 +198,46 @@
             </section>
         </section>
         <section class="main__right">
-            
+            <article class="topCategories">
+                <header>
+                    <h4>Top Categories</h4>
+                    <i class="uil uil-ellipsis-h"></i>
+                </header>
+                <canvas id="categories">
+
+                </canvas>
+                <ul>
+                    <li>
+                        <div>
+                            <span></span>
+                            <h5>Fashion</h5>
+                        </div>
+                        <h6>80.4%</h6>
+                    </li>
+                    <li>
+                        <div>
+                            <span></span>
+                            <h5>Food</h5>
+                        </div>
+                        <h6>73.0%</h6>
+                    </li>
+                    <li>
+                        <div>
+                            <span></span>
+                            <h5>Eletronics</h5>
+                        </div>
+                        <h6>55.4%</h6>
+                    </li>
+                    <li>
+                        <div>
+                            <span></span>
+                            <h5>Others</h5>
+                        </div>
+                        <h6>47.0%</h6>
+                    </li>
+                </ul>
+                <button>View Details <i class="uil uil-external-link-alt"></i></button>
+            </article>
         </section>
     </section>
    
