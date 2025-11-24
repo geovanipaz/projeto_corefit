@@ -474,3 +474,60 @@ table tbody tr div{
     background: var(--color-gray-50);
     color: var(--color-gray-900);
 }
+
+
+
+/*==================UPCOMING EVENTS===================*/
+.nextEvents{
+    background: var(--color-gray-0);
+    padding: 1rem;
+    border-radius: var(--radius-2);
+}
+
+.nextEvents header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nextEvents header i{
+    font-size: 1rem;
+}
+
+.nextEvents__image{
+    margin: 1rem 0;
+    border-radius: var(--radius-2);
+    height: 10rem;
+    overflow: hidden;
+}
+
+.nextEvents ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nextEvents ul li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 0 1rem var(--color-gray-100);
+    padding: 0.5rem;
+    border-radius: var(--radius-2);
+}
+
+.event__image{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-1);
+    overflow: hidden;
+}
+
+.nextEvents button{
+    padding: 0.7rem;
+    text-align: center;
+    width: 100%;
+    border-radius: var(--radius-1);
+    background: var(--color-gray-50);
+    margin-top: 1rem;
+}
