@@ -168,6 +168,11 @@ h5{
     color: var(--color-gray-0);
 }
 
+
+.sidebar__toggle-open, .sidebar__toggle-close{
+    display: none;
+}
+
 /*=====================NAVBAR=====================*/
 
 main{
@@ -530,4 +535,69 @@ table tbody tr div{
     border-radius: var(--radius-1);
     background: var(--color-gray-50);
     margin-top: 1rem;
+}
+
+
+/*=========================MEDIA QUERIES(tablets)====================*/
+@media screen and (max-width: 1024px){
+    
+    
+    .sidebar{
+        width: fit-content;
+    }
+
+    .sidebar h3, .sidebar h5{
+        display: none;
+    }
+
+    .sidebar a{
+        padding: 0.7rem;
+    }
+
+    .navbar__search{
+        width: 40vw;
+    }
+
+    .topProducts{
+        margin-bottom: 0;
+    }
+
+    .main__wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .topCategories{
+        margin-top: 0;
+    }
+
+    .nextEvents{
+        margin-bottom: 3rem;
+    }
+
+    
+    
+}
+
+
+/*=========================MEDIA QUERIES(tablets)====================*/
+@media screen and (max-width: 600px){
+    body{
+        padding: 0.6rem;
+    }
+
+    
+    .sidebar__toggle-open, .sidebar__toggle-close{
+        display: inline-block;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        position: fixed;
+        bottom: 3rem;
+        right: 2rem;
+        border-radius: var(--radius-2);
+        background: var(--color-gray-900);
+        color: var(--color-gray-0);
+        font-size: 1.5rem;
+        z-index: 2;
+    }
+    
 }

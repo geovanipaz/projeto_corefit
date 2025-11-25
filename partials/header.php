@@ -61,6 +61,9 @@
         </menu>
     </aside>
 
+    <button class="sidebar__toggle-open"><i class="uil uil-bars"></i></button>
+    <button class="sidebar__toggle-close"><i class="uil uil-multiply"></i></button>
+
     <main>
        <nav class="navbar">
             <div class="navbar__search">
