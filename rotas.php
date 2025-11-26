@@ -2,7 +2,7 @@
 <?php 
 
 
-
+require_once 'Controller/UsuariosController.php';
 require_once 'Controller/AlunosController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -20,16 +20,24 @@ $parts = explode('/', trim($url, '/'));
 $controller = $parts[0] ?? '';
 $action = $parts[1] ?? '';
 $param = $parts[2] ?? NULL;
-//var_dump($controller);
-//var_dump($action);
-//var_dump($param);
+var_dump($controller);
+var_dump($action);
+var_dump($param);
 //die;
 // Roteamento
 
 
 switch ($controller) {
+
+    
+    //-----Usuários----------
+    case 'login':
+        
+        UsuariosController::index();
+        break;
     
     case '':
+       
         AlunosController::index();
         break;
 
