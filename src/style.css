@@ -54,6 +54,10 @@ I   --color-gray-100: #26262b;
     --color-gray-900: #e2e6ec;
 }
 
+::-webkit-scrollbar{
+    width: 0;
+}
+
 body{
     font-family: sans-serif, "Montserrat";
     max-width: 100vw;
@@ -389,6 +393,7 @@ h1{
 
 table thead th{
     padding: 0.5rem;
+    text-align: left;
 }
 
 table tbody tr td:first-child{
@@ -554,6 +559,7 @@ table tbody tr div{
     border-radius: var(--radius-1);
     background: var(--color-gray-50);
     margin-top: 1rem;
+    color: var(--color-gray-900);
 }
 
 
