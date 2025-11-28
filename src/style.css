@@ -14,6 +14,7 @@
     --color-gray-800: #102125;
     --color-gray-900: #3101213;
     --color-primary: #826ee6;
+    --color-primary-red: #e32910;
     --color-primary-variant: #229de9;
     --color-danger: #df4969;
     --color-success:#1ca5a5;
@@ -41,17 +42,17 @@
 
 .dark{
     
-    --color-gray-0:#152039;
-    --color-gray-50: #0b0d10;
-I   --color-gray-100: #26262b;
+    --color-gray-0: #152039;
+    --color-gray-50:#0b0d10;
+    --color-gray-100: #26262b;
     --color-gray-200: #3c3c3e;
-    --color-gray-300: #696969;
-    --color-gray-400: #54555b;
-    --color-gray-500: #777982;
+    --color-gray-300: #696969,
+I   --color-gray-400: #54555b;
+    --color-gray-500:#777982;
     --color-gray-600: #82848b;
     --color-gray-700: #aaacb6;
     --color-gray-800: #c0c4cc;
-    --color-gray-900: #e2e6ec;
+    --color-gray-900: #e2ебес;
 }
 
 ::-webkit-scrollbar{
@@ -180,7 +181,7 @@ h5{
 }
 
 .sidebar a.active{
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-red);
 }
 
 .sidebar a.active i, .sidebar a.active h5{
@@ -702,3 +703,82 @@ table tbody tr div{
     }
 }
 
+/*=================Login========================*/
+
+.main-login{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.card-login{
+    background-color: var(--color-primary-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2);
+    width: 30rem;
+    height: 40rem;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+.card-login h1{
+   color: var(--color-gray-50);
+   position: relative;
+   margin-top: -5rem;
+}
+
+
+.card-login h1 span{
+    color: var(--color-primary);
+}
+
+.card-login h2{
+    color: var(--color-gray-50);
+}
+
+
+
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-control .alert__error_form {
+    background-color: var(--color-primary-red);
+    text-align: center;
+}
+
+.form-control .alert__error_form small{
+    color: white;
+}
+
+.form-login label{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.login-input{
+    background-color:var(--color-gray-50);
+    padding: 1rem;
+    width: 25rem;
+    height: 3rem;
+}
+
+.btn-login{
+    background-color: #0b0d10;
+    color: white;
+    font-size: 1rem;
+    height: 3rem;
+}

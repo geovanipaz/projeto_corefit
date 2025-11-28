@@ -7,6 +7,8 @@ require_once 'Controller/AlunosController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+
+
 // Remove o prefixo "/PHP_MVC_blog" da URL
 $basePath = '/projeto_corefit';
 if (strpos($url, $basePath) === 0) {
@@ -20,11 +22,14 @@ $parts = explode('/', trim($url, '/'));
 $controller = $parts[0] ?? '';
 $action = $parts[1] ?? '';
 $param = $parts[2] ?? NULL;
-var_dump($controller);
-var_dump($action);
-var_dump($param);
+//var_dump($controller);
+//var_dump($action);
+//var_dump($param);
 //die;
 // Roteamento
+
+
+//var_dump($_SESSION);
 
 
 switch ($controller) {
@@ -34,6 +39,10 @@ switch ($controller) {
     case 'login':
         
         UsuariosController::index();
+        break;
+    
+    case 'entrar':
+        UsuariosController::login();
         break;
     
     case '':

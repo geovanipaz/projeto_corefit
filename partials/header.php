@@ -15,8 +15,8 @@
 <body>
     <aside class="sidebar">
         <a href="<?= ROOT_URL ?>" class="sidebar__logo">
-            <img src="./assets/logo.png" alt="">
-            <h3>SH<span>O</span>P</h3>
+            <!--<img src="./assets/logo.png" alt=""> -->
+            <h3>Core<span>F</span>it</h3>
         </a>
         <menu class="sidebar__top">
             <a href="" class="active">
@@ -25,19 +25,19 @@
             </a>
             <a href="">
                 <i class="uil uil-th-large"></i>
-                <h5>Orders</h5>
+                <h5>Alunos</h5>
             </a>
             <a href="">
                 <i class="uil uil-tag-alt"></i>
-                <h5>Products</h5>
+                <h5>Treinos</h5>
             </a>
             <a href="">
                 <i class="uil uil-users-alt"></i>
-                <h5>Costumers</h5>
+                <h5>Exercícios</h5>
             </a>
             <a href="">
                 <i class="uil uil-chart-pie"></i>
-                <h5>Analytics</h5>
+                <h5>Financeiro</h5>
             </a>
             <a href="">
                 <i class="uil uil-envelopes"></i>
@@ -89,40 +89,33 @@
 
     <section class="main__wrapper">
         <section class="main__left">
-            <h1>Overview</h1>
+            <h1>Visão Geral</h1>
             <menu class="cards">
                 <article class="card">
-                    <h5>Products viwed <span class="success">+5.0%</span></h5>
-                    <h2>953.4k</h2>
+                    <h5>Alunos Matriculados <span class="success"></span></h5>
+                    <h2>953</h2>
                     <div>
-                        <small>Vs Last Month</small>
-                        <small>477.2%</small>
+                        <small></small>
+                        <small></small>
                     </div>
                 </article>
                 <article class="card">
-                    <h5>Products viwed <span class="success">+5.0%</span></h5>
-                    <h2>953.4k</h2>
+                    <h5>Alunos Adimplentes <span class="success"></span></h5>
+                    <h2>780</h2>
                     <div>
-                        <small>Vs Last Month</small>
-                        <small>477.2%</small>
+                        <small></small>
+                        <small></small>
                     </div>
                 </article>
                 <article class="card">
-                    <h5>Products viwed <span class="success">+5.0%</span></h5>
-                    <h2>953.4k</h2>
+                    <h5>Treinos Produzidos<span class="success"></span></h5>
+                    <h2>95</h2>
                     <div>
-                        <small>Vs Last Month</small>
-                        <small>477.2%</small>
+                        <small></small>
+                        <small></small>
                     </div>
                 </article>
-                <article class="card">
-                    <h5>Products viwed <span class="success">+5.0%</span></h5>
-                    <h2>953.4k</h2>
-                    <div>
-                        <small>Vs Last Month</small>
-                        <small>477.2%</small>
-                    </div>
-                </article>
+               
             </menu>
 
             <canvas id="chart">
