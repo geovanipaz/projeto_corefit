@@ -29,7 +29,7 @@ $param = $parts[2] ?? NULL;
 // Roteamento
 
 
-//var_dump($_SESSION);
+
 
 
 switch ($controller) {
