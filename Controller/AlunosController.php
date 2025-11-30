@@ -19,4 +19,8 @@ class AlunosController
         include_once 'Views/Alunos/index.php';
     }
 
+    public static function alunoGeral(){
+        include_once 'Views/Alunos/alunosGeral.php';
+    }
+
 }

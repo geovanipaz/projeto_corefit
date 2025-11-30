@@ -115,6 +115,45 @@
         </section>
     </section>
     <section class="main__right">
+        <article class="nextEvents">
+            <header>
+                <h4>Upcoming Events</h4>
+                <i class="uil uil-ellipsis-h"></i>
+            </header>
+            <div class="nextEvents__image">
+                <img src="./assets/events.png" alt="">
+            </div>
+            <ul>
+                <li>
+                    <div class="event__image">
+                        <img src="./assets/event1.jpg" alt="">
+                    </div>
+                    <div>
+                        <h5>Natal</h5>
+                        <small> 20 - 25 December, 2025</small>
+                    </div>
+                </li>
+                <li>
+                    <div class="event__image">
+                        <img src="./assets/event2.jpg" alt="">
+                    </div>
+                    <div>
+                        <h5>Fim de Ano</h5>
+                        <small> 26 - 31 December, 2025</small>
+                    </div>
+                </li>
+                <li>
+                    <div class="event__image">
+                        <img src="./assets/event3.jpg" alt="">
+                    </div>
+                    <div>
+                        <h5>Natal</h5>
+                        <small> 20 - 25 December, 2025</small>
+                    </div>
+                </li>
+            </ul>
+            <button>View event Calendar <i class="uil uil-external-link-alt"></i></button>
+        </article>
         <article class="topCategories">
             <header>
                 <h4>Alunos por faixa etária</h4>
@@ -155,45 +194,7 @@
             </ul>
             <button>View Details <i class="uil uil-external-link-alt"></i></button>
         </article>
-        <article class="nextEvents">
-            <header>
-                <h4>Upcoming Events</h4>
-                <i class="uil uil-ellipsis-h"></i>
-            </header>
-            <div class="nextEvents__image">
-                <img src="./assets/events.png" alt="">
-            </div>
-            <ul>
-                <li>
-                    <div class="event__image">
-                        <img src="./assets/event1.jpg" alt="">
-                    </div>
-                    <div>
-                        <h5>Natal</h5>
-                        <small> 20 - 25 December, 2025</small>
-                    </div>
-                </li>
-                <li>
-                    <div class="event__image">
-                        <img src="./assets/event2.jpg" alt="">
-                    </div>
-                    <div>
-                        <h5>Fim de Ano</h5>
-                        <small> 26 - 31 December, 2025</small>
-                    </div>
-                </li>
-                <li>
-                    <div class="event__image">
-                        <img src="./assets/event3.jpg" alt="">
-                    </div>
-                    <div>
-                        <h5>Natal</h5>
-                        <small> 20 - 25 December, 2025</small>
-                    </div>
-                </li>
-            </ul>
-            <button>View event Calendar <i class="uil uil-external-link-alt"></i></button>
-        </article>
+        
     </section>
 </section>
 

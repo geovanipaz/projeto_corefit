@@ -49,6 +49,10 @@ switch ($controller) {
        
         AlunosController::index();
         break;
+    
+    case 'alunos':
+        AlunosController::alunoGeral();
+        break;
 
     default:
         echo "Erro 404 - Página não encontrada";

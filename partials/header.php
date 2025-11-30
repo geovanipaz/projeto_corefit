@@ -23,7 +23,7 @@
                 <i class="uil uil-create-dashboard"></i>
                 <h5>Dashboard</h5>
             </a>
-            <a href="">
+            <a href="<?= ROOT_URL ?>alunos">
                 <i class="uil uil-th-large"></i>
                 <h5>Alunos</h5>
             </a>
