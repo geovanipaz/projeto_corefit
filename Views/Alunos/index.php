@@ -16,6 +16,7 @@
                 <h5>Alunos Matriculados <span class="success"></span></h5>
                 <h2>953</h2>
                 <div>
+                    <i class="uil uil-user"></i>
                     <small></small>
                     <small></small>
                 </div>
@@ -24,6 +25,7 @@
                 <h5>Alunos Adimplentes <span class="success"></span></h5>
                 <h2>780</h2>
                 <div>
+                    <i class="uil uil-user-check"></i>
                     <small></small>
                     <small></small>
                 </div>
@@ -32,6 +34,7 @@
                 <h5>Treinos Produzidos<span class="success"></span></h5>
                 <h2>95</h2>
                 <div>
+                    <i class="uil uil-dumbbell"></i>
                     <small></small>
                     <small></small>
                 </div>
