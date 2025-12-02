@@ -3,17 +3,21 @@
 ?>
 
 
+<div class="btn-matricular">
+    <i class="uil uil-plus"></i>
+    <button>Matricular Aluno</button>
+</div>
 <section class="topProducts">
-    <h3>Top Selling Products</h3>
+    <h3>Lista de Alunos</h3>
     <table>
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Stock</th>
-                <th>Price</th>
-                <th>Sales</th>
-                <th>Earnings</th>
-                <th></th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Data de Matricula</th>
+                <th>CPF</th>
+                <th>Plano</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -22,56 +26,53 @@
                     <div>
                         <img src="./assets/product1.jpg" alt="">
                     </div>
-                    <p>Winter Jacket for females</p>
+                    <p>Ronnie Colleman</p>
                 </td>
-                <td>932</td>
-                <td>$23.99</td>
-                <td>1,838</td>
-                <td>$802,00</td>
-                <td>+11.5%</td>
+                <td>20/02/1972</td>
+                <td>30/04/2025</td>
+                <td>111.111.222-78</td>
+                <td>Mensal</td>
+                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
+                
             </tr>
             <tr>
                 <td>
                     <div>
                         <img src="./assets/product1.jpg" alt="">
                     </div>
-                    <p>Winter Jacket for females</p>
+                    <p>Ramon Dino</p>
                 </td>
-                <td>932</td>
-                <td>$23.99</td>
-                <td>1,838</td>
-                <td>$802,00</td>
-                <td>+11.5%</td>
+                <td>20/02/1972</td>
+                <td>30/04/2025</td>
+                <td>111.111.222-78</td>
+                <td>Trimestral</td>
+                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
+                
             </tr>
             <tr>
                 <td>
                     <div>
                         <img src="./assets/product1.jpg" alt="">
                     </div>
-                    <p>Winter Jacket for females</p>
+                    <p>Jay Catlay</p>
                 </td>
-                <td>932</td>
-                <td>$23.99</td>
-                <td>1,838</td>
-                <td>$802,00</td>
-                <td>+11.5%</td>
+                <td>20/02/1972</td>
+                <td>30/04/2025</td>
+                <td>111.111.222-78</td>
+                <td>Anual</td>
+                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
             </tr>
-            <tr>
-                <td>
-                    <div>
-                        <img src="./assets/product1.jpg" alt="">
-                    </div>
-                    <p>Winter Jacket for females</p>
-                </td>
-                <td>932</td>
-                <td>$23.99</td>
-                <td>1,838</td>
-                <td>$802,00</td>
-                <td>+11.5%</td>
-            </tr>
+           
         </tbody>
     </table>
-    <small>See more...</small>
+    
+    <div class="alunos-paginacao">
+        <div class="paginacao">
+            <button class="btn-pag"><i class="uil uil-angle-left"></i> Anterior</button><button class="btn-pag">2</button>
+            <button class="btn-pag">3</button><button class="btn-pag">4</button>
+            <button class="btn-pag">Próximo <i class="uil uil-angle-right"></i></button>
+        </div>
+    </div>
 </section>
 
 
