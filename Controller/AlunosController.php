@@ -23,4 +23,8 @@ class AlunosController
         include_once 'Views/Alunos/alunosGeral.php';
     }
 
+    public static function formAddAluno(){
+        include_once 'Views/Alunos/matriculaAluno.php';
+    }
+
 }

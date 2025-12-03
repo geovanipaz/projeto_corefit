@@ -5,7 +5,7 @@
 
 <div class="btn-matricular">
     <i class="uil uil-plus"></i>
-    <button>Matricular Aluno</button>
+    <a href="<?= ROOT_URL ?>alunos/add"><button>Matricular Aluno</button></a>
 </div>
 <section class="topProducts">
     <h3>Lista de Alunos</h3>

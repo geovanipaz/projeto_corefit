@@ -51,6 +51,12 @@ switch ($controller) {
         break;
     
     case 'alunos':
+
+        if ($action === 'add') {
+            
+            AlunosController::formAddAluno();
+            break;
+        }
         AlunosController::alunoGeral();
         break;
 
