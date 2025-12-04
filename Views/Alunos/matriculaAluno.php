@@ -5,7 +5,11 @@
 
 <section class="main-AddAluno">
     <div class="card-AddAluno">
+        
         <h2>Matricular Aluno</h2>
+        <div id="alert__error" class="aviso">
+            
+        </div>
         <form action="" class="formAddAluno">
             <div class="form-control">
                 <label for="">Nome</label>
@@ -29,7 +33,7 @@
             </div>
             <div class="form-control">
                 <label for="">Plano</label>
-                <select name="" id="">
+                <select name="" id="" class="aluno-input">
                     <option value="">Mensal</option>
                     <option value="">Trimestral</option>
                     <option value="">Anual</option>

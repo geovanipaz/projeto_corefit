@@ -867,6 +867,22 @@ table tbody tr div{
     border-radius: 1rem;
 }
 
+.card-AddAluno #alert__error.aviso{
+    display: block;
+}
+
+.card-AddAluno #alert__error{
+    display: flex;
+    background: #c71919;
+    height: 2rem;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    color: white;
+    margin-top: 0.1rem;
+}
+
 .formAddAluno{
     display: flex;
     flex-direction: column;
