@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COREFIT</title>
     <link rel="stylesheet" href="<?= ROOT_URL ?>/src/style.css">
-    <!--ICONSCOUT CDN-->
+    
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 </head>
 
@@ -80,12 +80,9 @@
                     <i class="uil uil-export"></i>
                 </button>
                 <div class="navbar__items-image">
-                    <img src="<?=  ROOT_URL ?>/assets/candidate1.png" alt="">
+                    <img src="<?= ROOT_URL ?>/assets/candidate1.png" alt="">
                 </div>
             </menu>
             </div>
 
         </nav>
-
-       
-  

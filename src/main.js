@@ -9,7 +9,7 @@ themeBtn.addEventListener('click', () => {
         body.className = "";
         themeBtn.innerHTML = `<i class="uil uil-moon"></i>`
     }
-})
+});
 
 
 const sidebarOpenBtn = document.querySelector('.sidebar__toggle-open')
@@ -70,4 +70,4 @@ new Chart(pieChart, {
     type: 'pie',
     data: data,
 
-})
+});

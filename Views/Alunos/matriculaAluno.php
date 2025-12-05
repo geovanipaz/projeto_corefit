@@ -10,7 +10,7 @@
         <div id="alert__error" class="aviso">
             
         </div>
-        <form action="" class="formAddAluno">
+        <form action="" class="formAddAluno" id="addAlunoForm">
             <div class="form-control">
                 <label for="">Nome</label>
                 <input type="text" class="aluno-input" name="nome">
@@ -33,16 +33,17 @@
             </div>
             <div class="form-control">
                 <label for="">Plano</label>
-                <select name="" id="" class="aluno-input">
-                    <option value="">Mensal</option>
-                    <option value="">Trimestral</option>
-                    <option value="">Anual</option>
+                <select name="plano" id="" class="aluno-input">
+                    <option selected value="mensal">Mensal</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="anual">Anual</option>
                 </select>
             </div>
             <div class="form-control">
                 <label for="">Selecione uma foto</label>
-                <input type="file">
+                <input type="file" name="foto-aluno">
             </div>
+            <input type="hidden" name="acao" value="addaluno">
             <button type="submit" name="submit" class="btn-confirmarMatricula">Cadastrar</button>
         </form>
     </div>
@@ -50,3 +51,4 @@
 
 
 <?php include_once 'partials/footer.php'; ?>
+<script src="../src/js_alunos.js"></script>

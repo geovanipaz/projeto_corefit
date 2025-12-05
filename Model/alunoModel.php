@@ -155,4 +155,24 @@ class AlunoModel extends Database{
         
     }
 
+
+    public function carregaFoto($file)
+    {
+        $time = time();
+        $thumbnail_name = $time . $file['name'];
+        $thumbnail_tmp_name = $file['tmp_name'];
+        $thumbnail_destination_path = '../uploads/alunos' . $thumbnail_name;
+
+        $allowed_files = ['png', 'jpeg', 'jpg'];
+
+        $extension = explode('.', $thumbnail_name);
+        $extension = end($extension);
+        if (in_array($extension, $allowed_files)) {
+            move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
+            return $thumbnail_name;
+        } else {
+            $_SESSION['add-post'] = "A imagem deve ter extensão jpg, jpeg ou png";
+        }
+    }
+
 }
