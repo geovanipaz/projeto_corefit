@@ -18,7 +18,7 @@ addAlunoForm.addEventListener('submit', function(e){
     })
     .then(response => response.json())  // Parseia a resposta como JSON
     .then(data => {
-        console.log(data);
+        //console.log(data);
         
         
         if (data.status === 501) {
@@ -32,10 +32,11 @@ addAlunoForm.addEventListener('submit', function(e){
                 document.querySelector("#alert").style.display = 'none';
             }, 3000);
 
-            modalAddProd.close();
-            document.querySelector('#formAddProd').reset();
-            loadTodosProdutos();
+            //modalAddProd.close();
+            //document.querySelector('#formAddProd').reset();
+            //loadTodosProdutos();
         } else if (data.status === 404) {
+            //console.log(data);
             document.querySelector("#alert-falha").classList.remove("alert-error");
             document.querySelector('.avisoerro').textContent = data.mensagem;
         }

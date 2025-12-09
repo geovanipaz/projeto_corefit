@@ -8,7 +8,7 @@
         
         <h2>Matricular Aluno</h2>
         <div id="alert__error" class="aviso">
-            
+            <div class="avisoerro text-center"></div>
         </div>
         <form action="" class="formAddAluno" id="addAlunoForm">
             <div class="form-control">
@@ -29,7 +29,7 @@
             </div>
             <div class="form-control">
                 <label for="">CPF</label>
-                <input type="text" class="aluno-input" name="nome">
+                <input type="text" class="aluno-input" name="cpf">
             </div>
             <div class="form-control">
                 <label for="">Plano</label>
@@ -42,6 +42,10 @@
             <div class="form-control">
                 <label for="">Selecione uma foto</label>
                 <input type="file" name="foto-aluno">
+            </div>
+            <div class="form-control">
+                <label for="">Valor Pago</label>
+                <input type="number" class="aluno-input" name="pagamento">
             </div>
             <input type="hidden" name="acao" value="addaluno">
             <button type="submit" name="submit" class="btn-confirmarMatricula">Cadastrar</button>

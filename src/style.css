@@ -863,12 +863,12 @@ table tbody tr div{
     align-items: center;
     background-color: var(--color-gray-50);
     width: 30rem;
-    height: 40rem;
+    height: 50rem;
     border-radius: 1rem;
 }
 
 .card-AddAluno #alert__error.aviso{
-    display: block;
+    display: none;
 }
 
 .card-AddAluno #alert__error{
@@ -882,6 +882,22 @@ table tbody tr div{
     color: white;
     margin-top: 0.1rem;
 }
+
+.avisoerro{
+    width: 100%;
+
+    background-color: red;
+    color: #f2f2fe;
+    border-radius: var(--radius-1);
+    margin-bottom: 1rem;
+}
+
+
+.text-center{
+    text-align: center;
+    color: black;
+}
+
 
 .formAddAluno{
     display: flex;

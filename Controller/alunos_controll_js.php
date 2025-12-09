@@ -17,20 +17,32 @@ if (!empty($acao)) {
 //add produto
 if ($acao == 'addaluno' && !empty($_POST)) {
 
-   var_dump($_POST);
+   //var_dump($_POST);
    
-   die;
+   
 
     $nome = filter_var($_POST['nome'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $cpf = filter_var($_POST['cpf'], FILTER_SANITIZE_SPECIAL_CHARS);
     $data_nascimento = filter_var($_POST['nascimento'], FILTER_SANITIZE_SPECIAL_CHARS);
 
     $profissao = filter_var($_POST['profissao'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $peso = $_POST['peso'];
 
-    $imagem = $_FILES['foto-aluno'];
-    $ativo = filter_var($_POST['ativo'], FILTER_SANITIZE_NUMBER_INT);
-    $categoria = filter_var($_POST['categoria'], FILTER_SANITIZE_NUMBER_INT);
+    $data_matricula = date('Y-m-d');
 
+    $imagem = $_FILES['foto-aluno'];
+    
+    $plano = filter_var($_POST['plano'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $valor_pagamento = $_POST['pagamento'];
+
+    if($plano==='mensal'){
+        $vencimento = 30;
+    }else if($plano==='trimestral'){
+        $vencimento = 90;
+    }else if($plano='anual'){
+        $vencimento = 360;
+    }
 
 
     //validacao dos inputs
@@ -42,18 +54,26 @@ if ($acao == 'addaluno' && !empty($_POST)) {
         ];
         echo json_encode($res);
         exit();
-    } elseif (!$descricao) {
+    } elseif (!$data_nascimento) {
         $res = [
             'status' => 404,
-            'mensagem' => "Insira a Descrição"
+            'mensagem' => "Insira a Data de Nacimento"
         ];
         echo json_encode($res);
         exit();
     }
-    elseif (!$preco) {
+    elseif (!$valor_pagamento) {
         $res = [
             'status' => 404,
-            'mensagem' => "Insira o Preço"
+            'mensagem' => "Insira um Valor de Pagamento"
+        ];
+        echo json_encode($res);
+        exit();
+    }
+    elseif (!$plano) {
+        $res = [
+            'status' => 404,
+            'mensagem' => "Insira o Tipo de Plano"
         ];
         echo json_encode($res);
         exit();
@@ -67,24 +87,25 @@ if ($acao == 'addaluno' && !empty($_POST)) {
         exit();
     } else {
 
-        $pre_slug = implode("-", explode(" ",$nome))."-".time();
+        
 
        
-        $imagem_renomeada = $prod->carregaFoto($imagem);
+        $imagem_renomeada = $aluno->carregaFoto($imagem);
 
-        $produtoId = $prod->addProduto($nome,$descricao,$preco,$pre_slug,$imagem_renomeada, $ativo,$categoria);
+        $alunoId = $aluno->addAluno2($nome,$data_nascimento,$data_matricula, $peso, $profissao, $cpf,$imagem_renomeada,$plano,
+        $vencimento,$valor_pagamento,$data_matricula);
 
-        if ($produtoId) {
+        if ($alunoId) {
 
             $res = [
                 'status' => 200,
-                'mensagem' => "Produto Inserido com sucesso!"
+                'mensagem' => "Aluno Cadastrado com Sucesso!"
             ];
             echo json_encode($res);
         } else {
             $res = [
                 'status' => 500,
-                'mensagem' => "Erro ao adicionar"
+                'mensagem' => "Erro ao Cadastrar"
             ];
             echo json_encode($res);
         }
