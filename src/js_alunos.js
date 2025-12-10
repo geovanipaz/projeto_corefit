@@ -67,6 +67,42 @@ addAlunoForm.addEventListener('submit', function(e){
 
 
 
+async function loadTodosAlunos() {
+    const url = "../Controller/controll_produtos.php?acao=getprodutos";
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const tabela = document.querySelector(".tabelaProdutos");
+        tabela.innerHTML = data.produtosLista.map(produto => {
+            const {
+                id, nome, preco, descricao, imagem, ativo, cat_nome
+            } = produto;
+
+            return `
+                <tr>
+                    <td>${id}</td>
+                    <td>${nome}</td>
+                    <td>$${preco}</td>
+                    <td>${descricao}</td>
+                    <td><img src="../imagens/${imagem || "sem-foto.jpg"}" alt=""></td>
+                    <td>${ativo == 1 ? "Disponível" : "Indisponível"}</td>
+                    <td>${cat_nome}</td>
+                    <td><a data-prod-id="${id}" class="btn-edit-Prod">Editar</a></td>
+                    <td><a data-prod-id="${id}" class="btn-delete-prod">Deletar</a></td>
+                </tr>
+            `;
+        }).join("");
+
+        // Se houver paginação:
+        // atualizaPaginacao(data.totalPages, pageno);
+        
+    } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
+    }
+}
+
 
 
 
