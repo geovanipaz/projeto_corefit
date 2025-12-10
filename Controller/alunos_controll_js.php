@@ -12,7 +12,8 @@ if (!empty($acao)) {
     $aluno = new AlunoModel();
 }
 
-
+//var_dump($_POST);
+//die;
 
 //add produto
 if ($acao == 'addaluno' && !empty($_POST)) {
@@ -111,4 +112,26 @@ if ($acao == 'addaluno' && !empty($_POST)) {
         }
         exit();
     }
+}
+
+if ($acao === "getalunos") {
+
+   
+   
+
+    $dados = $aluno->todosAlunos2();
+    
+    
+    if (is_array($dados) || is_object($dados)) 
+    {
+        
+        $saida = ['alunosLista' => $dados];
+        
+        header('Content-Type: application/json');
+        echo json_encode($saida);
+    } else {
+        // Retorne um erro caso os dados não sejam válidos
+        echo json_encode(['error' => 'Dados inválidos']);
+    }
+    exit();
 }

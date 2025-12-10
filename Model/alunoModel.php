@@ -127,7 +127,21 @@ class AlunoModel extends Database{
 
     public function todosAlunos()
     {
-        $sql = "SELECT * FROM alunos";
+        $sql = "SELECT * FROM aluno";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+ 
+            $results = [];
+        }
+        return $results;
+    }
+
+    public function todosAlunos2()
+    {
+        $sql = "SELECT a.*, p.* FROM aluno a JOIN plano p ON a.id = p.id_aluno;";
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {

@@ -16,51 +16,54 @@ const sucessoAddAluno = document.querySelector('#sucesso-addAluno');
 
 
 
-addAlunoForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    console.log('submeteu');
-   
-    // Cria um objeto FormData a partir do formulário
-    let formData = new FormData(this);
+loadTodosAlunos();
 
-    // Configura a requisição
-    fetch('../Controller/alunos_controll_js.php', {
-        method: 'POST',
-        body: formData
-    })
+
+addAlunoForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  console.log('submeteu');
+
+  // Cria um objeto FormData a partir do formulário
+  let formData = new FormData(this);
+
+  // Configura a requisição
+  fetch('../Controller/alunos_controll_js.php', {
+    method: 'POST',
+    body: formData
+  })
     .then(response => response.json())  // Parseia a resposta como JSON
     .then(data => {
+      //console.log(data);
+
+
+      if (data.status === 501) {
+        // Aqui você pode adicionar qualquer código para tratar o status 501
+      } else if (data.status === 200) {
+        sucessoAddAluno.classList.remove("addAluno_sucesso");
+        nome.value = "";
+        cpf.value = "";
+        profissao.value = "";
+        nascimento.value = "";
+        peso.value = "";
+        pagamento.value = 0;
+        fotoAluno.value = '';
+        //document.querySelector('.avisosucesso').textContent = data.mensagem;
+        //document.querySelector("#alert").style.display = 'block';
+
+
+
+        //modalAddProd.close();
+        //document.querySelector('#formAddProd').reset();
+        //loadTodosProdutos();
+      } else if (data.status === 404) {
         //console.log(data);
-        
-        
-        if (data.status === 501) {
-            // Aqui você pode adicionar qualquer código para tratar o status 501
-        } else if (data.status === 200) {
-            sucessoAddAluno.classList.remove("addAluno_sucesso");
-            nome.value = "";
-            cpf.value = "";
-            profissao.value = "";
-            nascimento.value = "";
-            peso.value = "";
-            pagamento.value = 0;
-            fotoAluno.value = '';
-            //document.querySelector('.avisosucesso').textContent = data.mensagem;
-            //document.querySelector("#alert").style.display = 'block';
+        alertError.classList.remove("aviso");
+        alertError.textContent = data.mensagem;
+      }
 
-            
-
-            //modalAddProd.close();
-            //document.querySelector('#formAddProd').reset();
-            //loadTodosProdutos();
-        } else if (data.status === 404) {
-            //console.log(data);
-            alertError.classList.remove("aviso");
-            alertError.textContent = data.mensagem;
-        }
-            
     })
     .catch(error => {
-        console.error("Erro: " + error);
+      console.error("Erro: " + error);
     });
 
 });
@@ -68,39 +71,43 @@ addAlunoForm.addEventListener('submit', function(e){
 
 
 async function loadTodosAlunos() {
-    const url = "../Controller/controll_produtos.php?acao=getprodutos";
+  const url = "./Controller/alunos_controll_js.php?acao=getalunos";
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-        const tabela = document.querySelector(".tabelaProdutos");
-        tabela.innerHTML = data.produtosLista.map(produto => {
-            const {
-                id, nome, preco, descricao, imagem, ativo, cat_nome
-            } = produto;
-
-            return `
-                <tr>
-                    <td>${id}</td>
-                    <td>${nome}</td>
-                    <td>$${preco}</td>
-                    <td>${descricao}</td>
-                    <td><img src="../imagens/${imagem || "sem-foto.jpg"}" alt=""></td>
-                    <td>${ativo == 1 ? "Disponível" : "Indisponível"}</td>
-                    <td>${cat_nome}</td>
-                    <td><a data-prod-id="${id}" class="btn-edit-Prod">Editar</a></td>
-                    <td><a data-prod-id="${id}" class="btn-delete-prod">Deletar</a></td>
-                </tr>
+    const tabela = document.querySelector(".tabelaAlunos");
+    tabela.innerHTML = data.alunosLista.map(aluno => {
+      const {
+        nome, nascimento, data_matricula, cpf, foto_aluno, tipo
+      } = aluno;
+      console.log(data);
+      return `
+      <tr>
+                <td>
+                    <div>
+                        <img src="./uploads/alunos/${foto_aluno}" alt="">
+                    </div>
+                    <p>${nome}</p>
+                </td>
+                <td>${nascimento}</td>
+                <td>${data_matricula}</td>
+                <td>${cpf}</td>
+                <td>${tipo}</td>
+                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
+                
+            </tr>
+                
             `;
-        }).join("");
+    }).join("");
 
-        // Se houver paginação:
-        // atualizaPaginacao(data.totalPages, pageno);
-        
-    } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
-    }
+    // Se houver paginação:
+    // atualizaPaginacao(data.totalPages, pageno);
+
+  } catch (error) {
+    console.error("Erro ao carregar alunos:", error);
+  }
 }
 
 

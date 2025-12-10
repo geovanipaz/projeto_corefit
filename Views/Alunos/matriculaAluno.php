@@ -69,6 +69,5 @@
     </div>
 </section>
 
-
+<script src="<?= ROOT_URL ?>src/js_alunos.js"></script>
 <?php include_once 'partials/footer.php'; ?>
-<script src="../src/js_alunos.js"></script>

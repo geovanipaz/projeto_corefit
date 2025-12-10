@@ -20,6 +20,8 @@
                 
             </tr>
         </thead>
+        <tbody class="tabelaAlunos"></tbody>
+        <!--
         <tbody>
             <tr>
                 <td>
@@ -64,6 +66,7 @@
             </tr>
            
         </tbody>
+        -->
     </table>
     
     <div class="alunos-paginacao">
@@ -80,3 +83,4 @@
 
 
 <?php include_once 'partials/footer.php'; ?>
+<script src="<?= ROOT_URL ?>src/js_alunos.js"></script>
