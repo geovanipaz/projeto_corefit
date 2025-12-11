@@ -71,9 +71,11 @@
     
     <div class="alunos-paginacao">
         <div class="paginacao">
+            <!--
             <button class="btn-pag"><i class="uil uil-angle-left"></i> Anterior</button><button class="btn-pag">2</button>
             <button class="btn-pag">3</button><button class="btn-pag">4</button>
             <button class="btn-pag">Próximo <i class="uil uil-angle-right"></i></button>
+            -->
         </div>
     </div>
 </section>

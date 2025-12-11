@@ -16,8 +16,8 @@ const sucessoAddAluno = document.querySelector('#sucesso-addAluno');
 
 
 
-loadTodosAlunos();
 
+loadTodosAlunos();
 
 addAlunoForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -77,6 +77,10 @@ async function loadTodosAlunos() {
     const response = await fetch(url);
     const data = await response.json();
 
+    
+
+    
+
     const tabela = document.querySelector(".tabelaAlunos");
     tabela.innerHTML = data.alunosLista.map(aluno => {
       const {
@@ -103,7 +107,7 @@ async function loadTodosAlunos() {
     }).join("");
 
     // Se houver paginação:
-    // atualizaPaginacao(data.totalPages, pageno);
+   
 
   } catch (error) {
     console.error("Erro ao carregar alunos:", error);

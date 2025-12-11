@@ -9,7 +9,7 @@
             <h4>Aluno Cadastrado com Sucesso!</h4>
 
             <div class="sucesso-links">
-                <a href="">Página Principal</a>
+                <a href="<?= ROOT_URL ?>alunos">Página Principal</a>
                 <a href="">Acessar Aluno</a>
             </div>
         </div>
