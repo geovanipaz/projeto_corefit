@@ -17,7 +17,7 @@ const sucessoAddAluno = document.querySelector('#sucesso-addAluno');
 
 
 
-loadTodosAlunos();
+loadTodosAlunosPaginao();
 
 addAlunoForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -77,9 +77,9 @@ async function loadTodosAlunos() {
     const response = await fetch(url);
     const data = await response.json();
 
-    
 
-    
+
+
 
     const tabela = document.querySelector(".tabelaAlunos");
     tabela.innerHTML = data.alunosLista.map(aluno => {
@@ -107,7 +107,7 @@ async function loadTodosAlunos() {
     }).join("");
 
     // Se houver paginação:
-   
+
 
   } catch (error) {
     console.error("Erro ao carregar alunos:", error);
@@ -115,6 +115,83 @@ async function loadTodosAlunos() {
 }
 
 
+async function loadTodosAlunosPaginao(paginaAtual = 1, limite = 3) {
+  const url = `./Controller/alunos_controll_js.php?acao=getalunos&pagina=${paginaAtual}&limite=${limite}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+
+
+
+
+    const tabela = document.querySelector(".tabelaAlunos");
+    tabela.innerHTML = data.alunosLista.map(aluno => {
+      const {
+        nome, nascimento, data_matricula, cpf, foto_aluno, tipo
+      } = aluno;
+      console.log(data);
+      return `
+      <tr>
+                <td>
+                    <div>
+                        <img src="./uploads/alunos/${foto_aluno}" alt="">
+                    </div>
+                    <p>${nome}</p>
+                </td>
+                <td>${nascimento}</td>
+                <td>${data_matricula}</td>
+                <td>${cpf}</td>
+                <td>${tipo}</td>
+                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
+                
+            </tr>
+                
+            `;
+    }).join("");
+
+    // Se houver paginação:
+    const totalPaginas = data.totalPages;
+    renderizaPaginacao(paginaAtual, totalPaginas);
+
+  } catch (error) {
+    console.error("Erro ao carregar alunos:", error);
+  }
+}
+
+function renderizaPaginacao(currentPage, totalPages) {
+  const paginationContainer = document.querySelector(".paginacao");
+  paginationContainer.innerHTML = ""; // Limpar paginação anterior
+
+  // Adicionar botão "Previous"
+  if (currentPage > 1) {
+    paginationContainer.innerHTML += `<button class="btn-pag" data-page="${currentPage - 1}">Anterior</button>`;
+  }
+
+  // Adicionar os números das páginas
+  for (let i = 1; i <= totalPages; i++) {
+    paginationContainer.innerHTML += `
+    
+    
+     <button class="btn-pag${i === currentPage ? ' pagina-ativa' : ''}" data-page="${i}">
+        ${i}
+      </button>`;
+  }
+
+  // Adicionar botão "Next"
+  if (currentPage < totalPages) {
+    paginationContainer.innerHTML += `<button class="btn-pag" data-page="${currentPage + 1}">Próxima</button>`;
+  }
+
+  // Adicionar eventos aos botões
+  document.querySelectorAll('.btn-pag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      paginaAtual = Number(btn.dataset.page);
+      loadTodosAlunosPaginao(paginaAtual);
+    });
+  });
+}
 
 
 //mascara para cpf

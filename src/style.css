@@ -854,6 +854,13 @@ table tbody tr div{
     border-radius: 0.5rem;
 }
 
+.pagina-ativa{
+    background: red;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
 .main-AddAluno{
     background-color: white;
     height: 100%;

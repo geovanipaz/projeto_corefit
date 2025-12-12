@@ -1,16 +1,27 @@
-<?php 
+<?php
 
 require_once 'database.php';
 
 
 
-class AlunoModel extends Database{
+class AlunoModel extends Database
+{
 
-   
-    
-    public function addAluno($nome,$nascimento, $data_matricula, $peso, $profissao, $cpf,$foto_aluno, $tipo,
-     $vencimento, $valor, $data_pagamento)
-    {
+
+
+    public function addAluno(
+        $nome,
+        $nascimento,
+        $data_matricula,
+        $peso,
+        $profissao,
+        $cpf,
+        $foto_aluno,
+        $tipo,
+        $vencimento,
+        $valor,
+        $data_pagamento
+    ) {
         $query = "START TRANSACTION;
 
         INSERT INTO aluno (nome, nascimento, data_matricula, peso, profissao, cpf,foto_aluno)
@@ -65,48 +76,57 @@ class AlunoModel extends Database{
         }
     }
 
-    public function addAluno2($nome, $nascimento, $data_matricula, $peso, $profissao, $cpf, $foto_aluno, 
-                         $tipo, $vencimento, $valor, $data_pagamento)
-{
-    try {
-        // ---- Inicia transação ----
-        $this->conexao->beginTransaction();
+    public function addAluno2(
+        $nome,
+        $nascimento,
+        $data_matricula,
+        $peso,
+        $profissao,
+        $cpf,
+        $foto_aluno,
+        $tipo,
+        $vencimento,
+        $valor,
+        $data_pagamento
+    ) {
+        try {
+            // ---- Inicia transação ----
+            $this->conexao->beginTransaction();
 
-        // 1) Inserir aluno
-        $sql1 = "INSERT INTO aluno (nome, nascimento, data_matricula, peso, profissao, cpf, foto_aluno)
+            // 1) Inserir aluno
+            $sql1 = "INSERT INTO aluno (nome, nascimento, data_matricula, peso, profissao, cpf, foto_aluno)
                  VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt1 = $this->conexao->prepare($sql1);
-        $stmt1->execute([$nome, $nascimento, $data_matricula, $peso, $profissao, $cpf, $foto_aluno]);
-        $aluno_id = $this->conexao->lastInsertId();
+            $stmt1 = $this->conexao->prepare($sql1);
+            $stmt1->execute([$nome, $nascimento, $data_matricula, $peso, $profissao, $cpf, $foto_aluno]);
+            $aluno_id = $this->conexao->lastInsertId();
 
-        // 2) Inserir plano
-        $sql2 = "INSERT INTO plano (tipo, vencimento, situacao, id_aluno)
+            // 2) Inserir plano
+            $sql2 = "INSERT INTO plano (tipo, vencimento, situacao, id_aluno)
                  VALUES (?, ?, 'adimplente', ?)";
-        $stmt2 = $this->conexao->prepare($sql2);
-        $stmt2->execute([$tipo, $vencimento, $aluno_id]);
-        $plano_id = $this->conexao->lastInsertId();
+            $stmt2 = $this->conexao->prepare($sql2);
+            $stmt2->execute([$tipo, $vencimento, $aluno_id]);
+            $plano_id = $this->conexao->lastInsertId();
 
-        // 3) Inserir pagamento
-        $sql3 = "INSERT INTO pagamento (valor, data_pagamento, id_plano)
+            // 3) Inserir pagamento
+            $sql3 = "INSERT INTO pagamento (valor, data_pagamento, id_plano)
                  VALUES (?, ?, ?)";
-        $stmt3 = $this->conexao->prepare($sql3);
-        $stmt3->execute([$valor, $data_pagamento, $plano_id]);
+            $stmt3 = $this->conexao->prepare($sql3);
+            $stmt3->execute([$valor, $data_pagamento, $plano_id]);
 
-        // ---- Finaliza a transação ----
-        $this->conexao->commit();
+            // ---- Finaliza a transação ----
+            $this->conexao->commit();
 
-        return true;
-
-    } catch (PDOException $e) {
-        // Se algo der errado, desfaz tudo
-        $this->conexao->rollBack();
-        echo "Erro: " . $e->getMessage();
-        return false;
+            return true;
+        } catch (PDOException $e) {
+            // Se algo der errado, desfaz tudo
+            $this->conexao->rollBack();
+            echo "Erro: " . $e->getMessage();
+            return false;
+        }
     }
-}
 
 
-    public function editRequerente($nome,$telefone, $telefone2,$cpf,$matricula,$lotacao,$cargo,$id_requerente)
+    public function editRequerente($nome, $telefone, $telefone2, $cpf, $matricula, $lotacao, $cargo, $id_requerente)
     {
         $query = "UPDATE pericias_medicas_requerente SET nome='$nome', telefone='$telefone',
          telefone2='$telefone2', cpf='$cpf',matricula=$matricula, cargo='$cargo', lotacao='$lotacao'
@@ -122,7 +142,7 @@ class AlunoModel extends Database{
             echo "Error: " . $e->getMessage();
             $this->conexao->rollback();
             return false;
-        } 
+        }
     }
 
     public function todosAlunos()
@@ -133,7 +153,7 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
- 
+
             $results = [];
         }
         return $results;
@@ -147,26 +167,72 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } else {
- 
+
             $results = [];
         }
         return $results;
     }
 
+    public function todosAlunosPaginacao($deslocamento, $limite, $termo)
+    {
+        // Ajuste na consulta para suportar paginação e busca
+        $query = "
+        SELECT a.*, p.* 
+        FROM aluno a
+        JOIN plano p ON a.id = p.id_aluno
+        WHERE a.nome LIKE :search
+        LIMIT :limit OFFSET :offset
+    ";
+
+        // Preparar a consulta com os parâmetros
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':search', "%$termo%", PDO::PARAM_STR); // Adiciona a busca por nome
+        $stmt->bindValue(':limit', $limite, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $deslocamento, PDO::PARAM_INT);
+
+        // Executar a consulta
+        $stmt->execute();
+        $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+         // Buscar o total de alunos (para calcular a quantidade total de páginas)
+        $countQuery = "SELECT COUNT(*) as total FROM aluno a JOIN plano p ON a.id = p.id_aluno WHERE a.nome LIKE :search";
+        $countStmt = $this->conexao->prepare($countQuery);
+        $countStmt->bindValue(':search', "%$termo%", PDO::PARAM_STR);
+        $countStmt->execute();
+        $totalRows = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+
+        $totalPages = ceil($totalRows / $limite);
+
+        if ($stmt->rowCount() > 0) {
+            $results = [
+            'alunosLista' => $dados,
+            'totalPages' => $totalPages 
+        ];
+        } else {
+
+            $results = [];
+        }
+        return $results;
+
+    }
+
+
+       
+    
+
     public function getAlunoPorId($id)
     {
- 
+
         $sql = "SELECT * FROM aluno WHERE id=$id";
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
-        } else{
+        } else {
             return false;
         }
- 
-        
     }
 
     public function buscaRequerentePorCPF($termo)
@@ -177,7 +243,7 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
-        } else{
+        } else {
             return false;
         }
     }
@@ -190,7 +256,7 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
-        } else{
+        } else {
             return false;
         }
     }
@@ -203,7 +269,7 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
-        } else{
+        } else {
             return false;
         }
     }
@@ -215,22 +281,21 @@ class AlunoModel extends Database{
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
         } else {
- 
+
             $results = [];
         }
         return $results;
     }
 
-    public function totalLinhas(){
+    public function totalLinhas()
+    {
         $sqlTotal = "SELECT COUNT(*) as total FROM pericias_medicas_requerente";
         $stmtTotal = $this->conexao->prepare($sqlTotal);
         $stmtTotal->execute();
         $total = $stmtTotal->fetch(PDO::FETCH_ASSOC)['total'];
 
         return $total;
-        
     }
 
 
@@ -242,10 +307,9 @@ class AlunoModel extends Database{
         if ($stmt->rowCount() == 1) {
             return true;
         } else {
- 
+
             return false;
         }
-        
     }
 
 
@@ -267,5 +331,4 @@ class AlunoModel extends Database{
             $_SESSION['add-post'] = "A imagem deve ter extensão jpg, jpeg ou png";
         }
     }
-
 }

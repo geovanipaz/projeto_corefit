@@ -114,6 +114,7 @@ if ($acao == 'addaluno' && !empty($_POST)) {
     }
 }
 
+/*
 if ($acao === "getalunos") {
 
    
@@ -126,6 +127,36 @@ if ($acao === "getalunos") {
     {
         
         $saida = ['alunosLista' => $dados];
+        
+        header('Content-Type: application/json');
+        echo json_encode($saida);
+    } else {
+        // Retorne um erro caso os dados não sejam válidos
+        echo json_encode(['error' => 'Dados inválidos']);
+    }
+    exit();
+}
+
+*/
+
+if ($acao === "getalunos") {
+
+   // Parâmetros de busca e paginação
+    $page = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1; // Página atual
+    $limit = isset($_GET['limite']) ? (int)$_GET['limite'] : 3; // Limite de alunos por página
+    $search = isset($_GET['search']) ? $_GET['search'] : ''; // Termo de busca
+
+    // Calcular o OFFSET
+    $deslocamento = ($page - 1) * $limit;
+   
+
+    $dados = $aluno->todosAlunosPaginacao($deslocamento,$limit,$search);
+    
+    
+    if (is_array($dados) || is_object($dados)) 
+    {
+        
+        $saida = $dados;
         
         header('Content-Type: application/json');
         echo json_encode($saida);
