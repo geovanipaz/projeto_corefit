@@ -42,6 +42,20 @@ class UsuarioModel extends Database
         }
     }
 
+    public function todosUsuarios()
+    {
+        $sql = "SELECT * FROM usuarios";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+
+            $results = [];
+        }
+        return $results;
+    }
+
     public function trocaSenha($senha, $id_user)
     {
         $query = "UPDATE usuarios SET senha='$senha' WHERE id=$id_user";
@@ -97,7 +111,7 @@ class UsuarioModel extends Database
 
     public function getUsuarioPorId($id)
     {
-        $sql = "SELECT * FROM usuario WHERE id=:id";
+        $sql = "SELECT * FROM usuarios WHERE id=:id";
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute([':id' => $id]);
         if ($stmt->rowCount() > 0) {

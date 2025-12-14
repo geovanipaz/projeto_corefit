@@ -123,15 +123,12 @@ async function loadTodosAlunosPaginao(paginaAtual = 1, limite = 3) {
     const data = await response.json();
 
 
-
-
-
     const tabela = document.querySelector(".tabelaAlunos");
     tabela.innerHTML = data.alunosLista.map(aluno => {
       const {
         nome, nascimento, data_matricula, cpf, foto_aluno, tipo
       } = aluno;
-      console.log(data);
+      //console.log(data);
       return `
       <tr>
                 <td>

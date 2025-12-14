@@ -176,13 +176,8 @@ class AlunoModel extends Database
     public function todosAlunosPaginacao($deslocamento, $limite, $termo)
     {
         // Ajuste na consulta para suportar paginação e busca
-        $query = "
-        SELECT a.*, p.* 
-        FROM aluno a
-        JOIN plano p ON a.id = p.id_aluno
-        WHERE a.nome LIKE :search
-        LIMIT :limit OFFSET :offset
-    ";
+        $query = "SELECT a.*, p.* FROM aluno a JOIN plano p ON a.id = p.id_aluno
+        WHERE a.nome LIKE :search LIMIT :limit OFFSET :offset";
 
         // Preparar a consulta com os parâmetros
         $stmt = $this->conexao->prepare($query);

@@ -2,10 +2,11 @@
 
 ?>
 
-
-<div class="btn-matricular">
-    <i class="uil uil-plus"></i>
-    <a href="<?= ROOT_URL ?>alunos/add"><button>Matricular Aluno</button></a>
+<div class="btn-matricular-div">
+    <button class="btn-matricular">
+        <i class="uil uil-plus"></i>
+        <a href="<?= ROOT_URL ?>alunos/add">Matricular Aluno</a>
+    </button>
 </div>
 <section class="topProducts">
     <h3>Lista de Alunos</h3>
@@ -17,7 +18,7 @@
                 <th>Data de Matricula</th>
                 <th>CPF</th>
                 <th>Plano</th>
-                
+
             </tr>
         </thead>
         <tbody class="tabelaAlunos"></tbody>
@@ -68,7 +69,7 @@
         </tbody>
         -->
     </table>
-    
+
     <div class="alunos-paginacao">
         <div class="paginacao">
             <!--

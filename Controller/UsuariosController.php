@@ -14,6 +14,20 @@ class UsuariosController
         include_once 'Views/Usuarios/formLogin.php';
     }
 
+    public static function listaUsuarios()
+    {
+
+        
+        include_once 'Views/Usuarios/listaUsuarios.php';
+    }
+
+    public static function addUsuario()
+    {
+
+        
+        include_once 'Views/Usuarios/addUsuario.php';
+    }
+
     public static function login()
     {
         $usuario = new UsuarioModel();

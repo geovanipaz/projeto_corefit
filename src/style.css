@@ -398,17 +398,20 @@ h1{
 
 table thead th{
     padding: 0.5rem;
-    text-align: left;
+    text-align: center;
 }
 
 table tbody tr td:first-child{
     display: flex;
     gap: 1rem;
     align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 table tbody tr td{
     padding: 0.5rem;
+    text-align: center;
 }
 
 table tbody tr td i{
@@ -416,7 +419,7 @@ table tbody tr td i{
 }
 
 table tbody tr td a{
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     gap: 0.3rem;
 }
@@ -807,11 +810,17 @@ table tbody tr div{
 }
 
 /*================Alunos=====================*/
+
+.btn-matricular-div{
+    display: flex;
+    justify-content: end;
+}
+
 .btn-matricular{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 8rem;
+    width: 10rem;
     height: 2rem;
     background: var(--color-primary);
     top: 2rem;
@@ -827,6 +836,10 @@ table tbody tr div{
 }
 
 .btn-matricular i{
+    color: white;
+}
+
+.btn-matricular a{
     color: white;
 }
 
@@ -869,6 +882,7 @@ table tbody tr div{
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+    
 }
 
 .card-AddAluno{
@@ -880,6 +894,7 @@ table tbody tr div{
     width: 30rem;
     height: 50rem;
     border-radius: 1rem;
+    box-shadow:  0 1rem 1rem hsla(0, 0%, 2%, 0.5);
 }
 
 .card-AddAluno #alert__error.aviso{

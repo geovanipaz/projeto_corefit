@@ -39,9 +39,9 @@
                 <i class="uil uil-chart-pie"></i>
                 <h5>Financeiro</h5>
             </a>
-            <a href="">
-                <i class="uil uil-envelopes"></i>
-                <h5>Messages</h5>
+            <a href="<?= ROOT_URL ?>usuarios">
+                <i class="uil uil-users-alt"></i>
+                <h5>Usuários</h5>
             </a>
         </menu>
         <menu class="sidebar__bottom">

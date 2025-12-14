@@ -49,6 +49,15 @@ switch ($controller) {
        
         AlunosController::index();
         break;
+
+    case 'usuarios':
+        if ($action === 'add') {
+            
+            UsuariosController::addUsuario();
+            break;
+        }
+        UsuariosController::listaUsuarios();
+        break;
     
     case 'alunos':
 
