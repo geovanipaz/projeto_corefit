@@ -4,14 +4,18 @@ const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const senhaRepetida = document.getElementById('senha-repetida');
 
-const addAlunoForm = document.querySelector('#addUsuarioForm');
+const addUsuarioForm = document.querySelector('#addUsuarioForm');
 
+
+//alertas
+const alertError = document.querySelector("#alert__error");
+const sucessoAddAluno = document.querySelector('#sucesso-addAluno');
 
 loadTodosUsuarios();
 
 
 
-addAlunoForm.addEventListener('submit', function (e) {
+addUsuarioForm.addEventListener('submit', function (e) {
   e.preventDefault();
   console.log('submeteu');
 
@@ -56,10 +60,9 @@ async function loadTodosUsuarios() {
 
   try {
     const response = await fetch(url);
-    //const data = await response.json();
+    const data = await response.json();
 
-const text = await response.text();
-console.log(text);
+
 
 
 

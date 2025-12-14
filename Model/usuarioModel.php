@@ -36,7 +36,7 @@ class UsuarioModel extends Database
 
         $count = $stmt->rowCount();
         if ($count > 0) {
-            $_SESSION['signup'] = "Username ou Email já existe";
+            return false;
         } else {
             return true;
         }
