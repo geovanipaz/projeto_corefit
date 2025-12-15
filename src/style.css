@@ -977,6 +977,8 @@ table tbody tr div{
 }
 #sucesso-addAluno h4{
     color: white;
+    position: relative;
+    top: 0.5rem;
 }
 
 .sucesso-links{

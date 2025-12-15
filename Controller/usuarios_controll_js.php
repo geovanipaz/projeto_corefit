@@ -80,7 +80,24 @@ if ($acao == 'addusuario' && !empty($_POST)) {
         ];
         echo json_encode($res);
         exit();
-    } elseif (strlen($senha) < 3 || strlen($senha_repetida) < 3) {
+    }
+    elseif (!$senha) {
+        $res = [
+            'status' => 404,
+            'mensagem' => "Insira uma Senha."
+        ];
+        echo json_encode($res);
+        exit();
+    }
+    elseif (!$senha_repetida) {
+        $res = [
+            'status' => 404,
+            'mensagem' => "Repita a Senha."
+        ];
+        echo json_encode($res);
+        exit();
+    }
+     elseif (strlen($senha) < 3 || strlen($senha_repetida) < 3) {
         $res = [
             'status' => 404,
             'mensagem' => "Senha deve ter mais 3 caracteres"

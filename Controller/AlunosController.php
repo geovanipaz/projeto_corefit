@@ -12,18 +12,19 @@ class AlunosController
 
     public static function index()
     {
-        if (!isset($_SESSION['id-usuario'])) {
-            echo "------------";
-            header('Location:' . ROOT_URL . 'login');
-        }
+        validaUsuario();
         include_once 'Views/Alunos/index.php';
     }
 
     public static function alunoGeral(){
+        validaUsuario();
         include_once 'Views/Alunos/alunosGeral.php';
     }
 
     public static function formAddAluno(){
+        if (!isset($_SESSION['id-usuario'])) {
+            header('Location:' . ROOT_URL . 'login');
+        }
         include_once 'Views/Alunos/matriculaAluno.php';
     }
 

@@ -19,10 +19,10 @@ addUsuarioForm.addEventListener('submit', function (e) {
   e.preventDefault();
   console.log('submeteu');
 
-  // Cria um objeto FormData a partir do formulário
+  
   let formData = new FormData(this);
 
-  // Configura a requisição
+  
   fetch('../Controller/usuarios_controll_js.php', {
     method: 'POST',
     body: formData
@@ -33,9 +33,10 @@ addUsuarioForm.addEventListener('submit', function (e) {
 
 
       if (data.status === 501) {
-        // Aqui você pode adicionar qualquer código para tratar o status 501
+        
       } else if (data.status === 200) {
         sucessoAddAluno.classList.remove("addAluno_sucesso");
+        alertError.classList.add("aviso");
         nomeUsuario.value = "";
         username.value = "";
         email.value = "";

@@ -1,4 +1,8 @@
-<?php require_once __DIR__ . '/../constants.php';  ?>
+<?php require_once __DIR__ . '/../constants.php'; 
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +43,7 @@
                 <i class="uil uil-chart-pie"></i>
                 <h5>Financeiro</h5>
             </a>
+             
             <a href="<?= ROOT_URL ?>usuarios">
                 <i class="uil uil-users-alt"></i>
                 <h5>Usuários</h5>
@@ -53,7 +58,7 @@
                 <i class="uil uil-setting"></i>
                 <h5>Settings</h5>
             </a>
-            <a href="">
+            <a href="<?= ROOT_URL ?>sair">
                 <i class="uil uil-signout"></i>
                 <h5>Logout</h5>
             </a>

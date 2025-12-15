@@ -40,6 +40,7 @@ addAlunoForm.addEventListener('submit', function (e) {
         // Aqui você pode adicionar qualquer código para tratar o status 501
       } else if (data.status === 200) {
         sucessoAddAluno.classList.remove("addAluno_sucesso");
+        alertError.classList.add("aviso");
         nome.value = "";
         cpf.value = "";
         profissao.value = "";

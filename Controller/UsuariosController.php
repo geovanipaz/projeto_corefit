@@ -17,14 +17,14 @@ class UsuariosController
     public static function listaUsuarios()
     {
 
-        
+        validaAdmin();
         include_once 'Views/Usuarios/listaUsuarios.php';
     }
 
     public static function addUsuario()
     {
 
-        
+        validaAdmin();
         include_once 'Views/Usuarios/addUsuario.php';
     }
 
@@ -58,5 +58,11 @@ class UsuariosController
             header('Location:' . ROOT_URL . 'login');
             die;
         }
+    }
+
+    public static function sair(){
+        session_destroy();
+        header('Location:' . ROOT_URL . 'login');
+        die;
     }
 }

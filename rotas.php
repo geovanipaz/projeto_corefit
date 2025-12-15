@@ -44,6 +44,10 @@ switch ($controller) {
     case 'entrar':
         UsuariosController::login();
         break;
+
+    case 'sair':
+        UsuariosController::sair();
+        break;
     
     case '':
        
