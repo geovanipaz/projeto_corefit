@@ -97,6 +97,8 @@ class UsuarioModel extends Database
                 
                 if ($row['tipo'] == 'root') {
                     $_SESSION['user_is_admin'] = true;
+                }else{
+                    $_SESSION['user_is_admin'] = false;
                 }
 
                 header("Location:" . ROOT_URL );

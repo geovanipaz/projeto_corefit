@@ -1,10 +1,6 @@
 <?php include_once 'partials/header.php';
 
 
-
-
-
-
 ?>
 
 
@@ -47,115 +43,55 @@
         </canvas>
 
         <section class="topProducts">
-            <h3>Top Selling Products</h3>
+            <h3>Lista de Alunos</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th>Sales</th>
-                        <th>Earnings</th>
-                        <th></th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Data de Matricula</th>
+                        <th>CPF</th>
+                        <th>Plano</th>
+
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="./assets/product1.jpg" alt="">
-                            </div>
-                            <p>Winter Jacket for females</p>
-                        </td>
-                        <td>932</td>
-                        <td>$23.99</td>
-                        <td>1,838</td>
-                        <td>$802,00</td>
-                        <td>+11.5%</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="./assets/product1.jpg" alt="">
-                            </div>
-                            <p>Winter Jacket for females</p>
-                        </td>
-                        <td>932</td>
-                        <td>$23.99</td>
-                        <td>1,838</td>
-                        <td>$802,00</td>
-                        <td>+11.5%</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="./assets/product1.jpg" alt="">
-                            </div>
-                            <p>Winter Jacket for females</p>
-                        </td>
-                        <td>932</td>
-                        <td>$23.99</td>
-                        <td>1,838</td>
-                        <td>$802,00</td>
-                        <td>+11.5%</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <img src="./assets/product1.jpg" alt="">
-                            </div>
-                            <p>Winter Jacket for females</p>
-                        </td>
-                        <td>932</td>
-                        <td>$23.99</td>
-                        <td>1,838</td>
-                        <td>$802,00</td>
-                        <td>+11.5%</td>
-                    </tr>
-                </tbody>
+                <tbody class="tabelaAlunos"></tbody>
+          
             </table>
-            <small>See more...</small>
+            <small> <a href="<?= ROOT_URL ?>alunos">Ver mais...</a></small>
         </section>
     </section>
     <section class="main__right">
         <article class="nextEvents">
             <header>
-                <h4>Upcoming Events</h4>
+                <h4>Ultimas Atualizações</h4>
                 <i class="uil uil-ellipsis-h"></i>
             </header>
-            <div class="nextEvents__image">
-                <img src="./assets/events.png" alt="">
-            </div>
+
             <ul>
                 <li>
-                    <div class="event__image">
-                        <img src="./assets/event1.jpg" alt="">
-                    </div>
+
                     <div>
-                        <h5>Natal</h5>
-                        <small> 20 - 25 December, 2025</small>
+                        <h5>23/12/2025</h5>
+                        <small> Ronnie Coleman Pagou mensalidade</small>
                     </div>
                 </li>
                 <li>
-                    <div class="event__image">
-                        <img src="./assets/event2.jpg" alt="">
-                    </div>
+
                     <div>
-                        <h5>Fim de Ano</h5>
-                        <small> 26 - 31 December, 2025</small>
+                        <h5>21/12/2025</h5>
+                        <small>Ramon Dino foi matriculado</small>
                     </div>
                 </li>
                 <li>
-                    <div class="event__image">
-                        <img src="./assets/event3.jpg" alt="">
-                    </div>
+
                     <div>
-                        <h5>Natal</h5>
-                        <small> 20 - 25 December, 2025</small>
+                        <h5>20/12/2025</h5>
+                        <small>Julio passou treino para Renato </small>
                     </div>
                 </li>
             </ul>
-            <button>View event Calendar <i class="uil uil-external-link-alt"></i></button>
+            <button>Ver mais <i class="uil uil-external-link-alt"></i></button>
         </article>
         <article class="topCategories">
             <header>
@@ -197,9 +133,10 @@
             </ul>
             <button>View Details <i class="uil uil-external-link-alt"></i></button>
         </article>
-        
+
     </section>
 </section>
 
 
 <?php include_once 'partials/footer.php'; ?>
+<script src="<?= ROOT_URL ?>src/js_alunos.js"></script>

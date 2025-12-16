@@ -21,8 +21,8 @@ function validaUsuario(){
 }
 
 function validaAdmin(){
-    if (!isset($_SESSION['id-usuario']) || !isset($_SESSION['user_is_admin']))
+    if (!isset($_SESSION['id-usuario']) && $_SESSION['user_is_admin']=='false')
     {
-        header('Location:' . ROOT_URL );
+        header('Location:' . ROOT_URL . 'login' );
     }
 }

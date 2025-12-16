@@ -17,7 +17,7 @@ class UsuariosController
     public static function listaUsuarios()
     {
 
-        validaAdmin();
+        validaUsuario();
         include_once 'Views/Usuarios/listaUsuarios.php';
     }
 

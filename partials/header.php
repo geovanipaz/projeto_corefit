@@ -39,6 +39,7 @@
                 <i class="uil uil-users-alt"></i>
                 <h5>Exercícios</h5>
             </a>
+            <?php if(!validaAdmin()){  ?>
             <a href="">
                 <i class="uil uil-chart-pie"></i>
                 <h5>Financeiro</h5>
@@ -48,6 +49,7 @@
                 <i class="uil uil-users-alt"></i>
                 <h5>Usuários</h5>
             </a>
+            <?php } ?>
         </menu>
         <menu class="sidebar__bottom">
             <a href="">
@@ -84,9 +86,11 @@
                     Export
                     <i class="uil uil-export"></i>
                 </button>
+                
                 <div class="navbar__items-image">
                     <img src="<?= ROOT_URL ?>/assets/candidate1.png" alt="">
                 </div>
+                
             </menu>
             </div>
 
