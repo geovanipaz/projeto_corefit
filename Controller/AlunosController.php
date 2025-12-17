@@ -22,9 +22,7 @@ class AlunosController
     }
 
     public static function formAddAluno(){
-        if (!isset($_SESSION['id-usuario'])) {
-            header('Location:' . ROOT_URL . 'login');
-        }
+        validaUsuario();
         include_once 'Views/Alunos/matriculaAluno.php';
     }
 

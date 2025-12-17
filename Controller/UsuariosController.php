@@ -24,7 +24,8 @@ class UsuariosController
     public static function addUsuario()
     {
 
-        validaAdmin();
+        validaUsuario();
+        //validaAdmin();
         include_once 'Views/Usuarios/addUsuario.php';
     }
 

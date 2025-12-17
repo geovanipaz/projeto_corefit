@@ -28,7 +28,7 @@ $param = $parts[2] ?? NULL;
 //die;
 // Roteamento
 
-//var_dump($_SESSION);
+var_dump($_SESSION);
 
 
 

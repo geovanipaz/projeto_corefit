@@ -17,12 +17,20 @@ function validaUsuario(){
     if (!isset($_SESSION['id-usuario'])) 
     {
         header('Location:' . ROOT_URL . 'login');
+        die;
     }
+    if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin']===false)
+    {
+        header('Location:' . ROOT_URL .'alunos');
+    }
+    
 }
 
+/*
 function validaAdmin(){
-    if (!isset($_SESSION['id-usuario']) && $_SESSION['user_is_admin']=='false')
+    if ($_SESSION['user_is_admin']===false)
     {
-        header('Location:' . ROOT_URL . 'login' );
+        header('Location:' . ROOT_URL );
     }
 }
+    */

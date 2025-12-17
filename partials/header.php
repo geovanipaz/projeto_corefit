@@ -39,7 +39,7 @@
                 <i class="uil uil-users-alt"></i>
                 <h5>Exercícios</h5>
             </a>
-            <?php if(!validaAdmin()){  ?>
+            <?php {  ?>
             <a href="">
                 <i class="uil uil-chart-pie"></i>
                 <h5>Financeiro</h5>

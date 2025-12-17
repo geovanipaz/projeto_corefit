@@ -64,7 +64,7 @@
     <section class="main__right">
         <article class="nextEvents">
             <header>
-                <h4>Ultimas Atualizações</h4>
+                <h4>Últimas Atualizações</h4>
                 <i class="uil uil-ellipsis-h"></i>
             </header>
 
