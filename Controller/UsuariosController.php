@@ -26,7 +26,7 @@ class UsuariosController
     {
 
         validaUsuario();
-        //validaAdmin();
+        validaAdmin();
         include_once 'Views/Usuarios/addUsuario.php';
     }
 

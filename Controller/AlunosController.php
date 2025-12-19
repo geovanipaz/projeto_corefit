@@ -21,6 +21,11 @@ class AlunosController
         include_once 'Views/Alunos/alunosGeral.php';
     }
 
+    public static function ver(){
+        validaUsuario();
+        include_once 'Views/Alunos/alunoDetalhe.php';
+    }
+
     public static function formAddAluno(){
         validaUsuario();
         include_once 'Views/Alunos/matriculaAluno.php';

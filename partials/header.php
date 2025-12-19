@@ -83,14 +83,13 @@
                     <i class="uil uil-moon"></i>
                 </button>
                 <button class="navbar__export-btn">
-                    Export
-                    <i class="uil uil-export"></i>
+                    <?= $_SESSION['nome-usuario'] ?>
                 </button>
-                
+                <!--
                 <div class="navbar__items-image">
                     <img src="<?= ROOT_URL ?>/assets/candidate1.png" alt="">
                 </div>
-                
+                -->
             </menu>
             </div>
 

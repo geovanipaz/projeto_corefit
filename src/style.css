@@ -992,3 +992,42 @@ table tbody tr div{
 .sucesso-links a{
     color: black;
 }
+
+
+.main-detalheAluno{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+
+.card-detalheAluno{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: red;
+    width: 70rem;
+    height: 30rem;
+}
+
+.card-1{
+    display: block;
+    padding: 2rem;
+    background-color: #1ca5a5;
+    width: 20rem;
+}
+
+.card-imagem{
+    border-radius: var(--radius-2);
+    /*border: 1rem solid var(--color-gray-700);*/
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+}
+
+.card-2{
+    display: flex;
+    
+}

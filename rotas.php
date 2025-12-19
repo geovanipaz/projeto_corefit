@@ -64,7 +64,11 @@ switch ($controller) {
         break;
     
     case 'alunos':
-
+        if ($action=='aluno' && $param) {
+            
+            AlunosController::ver($param);
+            break;
+        }
         if ($action === 'add') {
             
             AlunosController::formAddAluno();

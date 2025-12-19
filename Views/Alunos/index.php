@@ -105,28 +105,28 @@
                 <li>
                     <div>
                         <span></span>
-                        <h5>Fashion</h5>
+                        <h5>12 - 18 anos </h5>
                     </div>
                     <h6>80.4%</h6>
                 </li>
                 <li>
                     <div>
                         <span></span>
-                        <h5>Food</h5>
+                        <h5>19 - 24 anos</h5>
                     </div>
                     <h6>73.0%</h6>
                 </li>
                 <li>
                     <div>
                         <span></span>
-                        <h5>Eletronics</h5>
+                        <h5>25 - 35 anos</h5>
                     </div>
                     <h6>55.4%</h6>
                 </li>
                 <li>
                     <div>
                         <span></span>
-                        <h5>Others</h5>
+                        <h5>36 - 45 anos</h5>
                     </div>
                     <h6>47.0%</h6>
                 </li>

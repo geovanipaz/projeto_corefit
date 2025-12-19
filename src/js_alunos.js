@@ -85,7 +85,7 @@ async function loadTodosAlunos() {
     const tabela = document.querySelector(".tabelaAlunos");
     tabela.innerHTML = data.alunosLista.map(aluno => {
       const {
-        nome, nascimento, data_matricula, cpf, foto_aluno, tipo
+        id,nome, nascimento, data_matricula, cpf, foto_aluno, tipo
       } = aluno;
       console.log(data);
       return `
@@ -127,7 +127,7 @@ async function loadTodosAlunosPaginao(paginaAtual = 1, limite = 3) {
     const tabela = document.querySelector(".tabelaAlunos");
     tabela.innerHTML = data.alunosLista.map(aluno => {
       const {
-        nome, nascimento, data_matricula, cpf, foto_aluno, tipo
+        id,nome, nascimento, data_matricula, cpf, foto_aluno, tipo
       } = aluno;
       //console.log(data);
       return `
@@ -142,7 +142,7 @@ async function loadTodosAlunosPaginao(paginaAtual = 1, limite = 3) {
                 <td>${data_matricula}</td>
                 <td>${cpf}</td>
                 <td>${tipo}</td>
-                <td><a href="">Info <i class="uil uil-info-circle"></i></a></td>
+                <td><a href="alunos/aluno/${id}">Info <i class="uil uil-info-circle"></i></a></td>
                 
             </tr>
                 
