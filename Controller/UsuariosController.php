@@ -18,6 +18,7 @@ class UsuariosController
     {
 
         validaUsuario();
+        validaAdmin();
         include_once 'Views/Usuarios/listaUsuarios.php';
     }
 

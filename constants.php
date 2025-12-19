@@ -19,18 +19,19 @@ function validaUsuario(){
         header('Location:' . ROOT_URL . 'login');
         die;
     }
+    /*
     if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin']===false)
     {
         header('Location:' . ROOT_URL .'alunos');
     }
-    
+    */
 }
 
-/*
+
 function validaAdmin(){
     if ($_SESSION['user_is_admin']===false)
     {
-        header('Location:' . ROOT_URL );
+        header('Location:' . ROOT_URL.'alunos');
     }
 }
-    */
+    

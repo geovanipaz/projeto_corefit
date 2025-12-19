@@ -97,12 +97,15 @@ class UsuarioModel extends Database
                 
                 if ($row['tipo'] == 'root') {
                     $_SESSION['user_is_admin'] = true;
+                    header("Location:" . ROOT_URL );
+                    exit();
                 }else{
                     $_SESSION['user_is_admin'] = false;
+                    header("Location:" . ROOT_URL .'alunos');
+                    exit();
                 }
 
-                header("Location:" . ROOT_URL );
-                exit(); // Importante para parar a execução após redirecionar
+                 // Importante para parar a execução após redirecionar
             } else {
                 $_SESSION['signin']['senha-incorreta'] = "Senha Incorreta";
             }
