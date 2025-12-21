@@ -13,7 +13,33 @@
                 <h2>Arnold</h2>
             </div>
         </div>
-        <div class="card-2"></div>
+        <div class="card-2">
+            <div class="info-gerais">
+                <h2>INFORMAÇÕES</h2>
+            </div>
+            <div class="info-especificas">
+                <div class="info-cpf">
+                    <h5>CPF</h5>
+                    <p>134.255.266-98</p>
+                </div>
+                <div class="info-profissao">
+                    <h5>PROFISSÃO</h5>
+                    <p>Marombeiro</p>
+                </div>
+                <div class="info-nascimento">
+                    <h5>DATA DE NASCIMENTO</h5>
+                    <p>23/03/1998</p>
+                </div>
+                <div class="info-peso">
+                    <h5>PESO</h5>
+                    <p>98</p>
+                </div>
+                <div class="info-matricula">
+                    <h5>DATA DE MATRICULA</h5>
+                    <p>12/02/2025</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

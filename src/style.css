@@ -1007,10 +1007,11 @@ table tbody tr div{
 
 .card-detalheAluno{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: red;
+    grid-template-columns: 20rem 50rem;
+    background-color: var(--color-gray-100);
     width: 70rem;
     height: 30rem;
+    border-radius: var(--radius-2);
 }
 
 .card-1{
@@ -1018,6 +1019,8 @@ table tbody tr div{
     padding: 2rem;
     background-color: #1ca5a5;
     width: 20rem;
+    border-top-left-radius: var(--radius-2);
+    border-bottom-left-radius: var(--radius-2);
 }
 
 .card-imagem{
@@ -1026,8 +1029,24 @@ table tbody tr div{
     overflow: hidden;
     margin-bottom: 1.6rem;
 }
+.card-nome{
+    display: flex;
+    justify-content: center;
+}
 
 .card-2{
-    display: flex;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+}
+
+.info-gerais{
+    border-bottom: 0.2rem solid black;
     
+}
+
+.info-especificas{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
 }
