@@ -39,6 +39,22 @@
                     <p>12/02/2025</p>
                 </div>
             </div>
+
+            <div class="info-atuais">
+                <div class="status-financeiro">
+                    <h4>SITUAÇÃO FINANCEIRA</h4>
+                    <p><i class="uil uil-check-circle"></i>Adimplente</p>
+                </div>
+                <div class="status-treino">
+                    <h4>QUANTIDADE DE TREINOS</h4>
+                    <p>2</p>
+                </div>
+            </div>
+            <div class="card-botoes">
+                <a href="" class="btn-info"><i class="uil uil-edit"></i> Editar Informações</a>
+                <a href="" class="btn-financeiro"><i class="uil uil-usd-circle"></i> Financeiro</a>
+                <a href="" class="btn-treinos"><i class="uil uil-dumbbell"></i> Treinos</a>
+            </div>
         </div>
     </div>
 </section>
